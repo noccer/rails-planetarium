@@ -59,9 +59,10 @@ end
 <% end %>
 ```
 
-
-
-
+- add line to index.html.erb
+```
+<%= link_to 'Create new Planet', new_planet_path %>
+```
 
 
 
