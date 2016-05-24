@@ -9,6 +9,7 @@
 - database.yml >> adapter: postgresql >> database: planetarium
 
 - edit Gemfile
+- bundle install
 - delete out test and production lines in database.yml
 - `rake db:create` [rake db:drop would have destroyed the database]
 
@@ -49,7 +50,14 @@ class PlanetsController < ApplicationController
 end
 ```
 
+- edit the index.html.erb file
+```
+<h1>Planetarium</h1>
 
+<% Planet.all.each do |planet| %>
+	<%= link_to planet.name, planet %>
+<% end %>
+```
 
 
 

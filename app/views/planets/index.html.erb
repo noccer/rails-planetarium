@@ -1,0 +1,7 @@
+<h1>Planetarium</h1>
+
+<%= link_to 'Create new Planet', new_planet_path %>
+
+<% Planet.all.each do |planet| %>
+	<%= link_to planet.name, planet %>
+<% end %>
