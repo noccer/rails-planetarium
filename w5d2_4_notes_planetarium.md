@@ -82,7 +82,26 @@ end
 ```
 Information here is going to post to /planets
 
+- Update the planets_controller in a different way to the cats new_project.
 
+```
+def create
+	planet = Planet.create(planet_params) #create a new instance
+	redirect_to planets_path
+end
+
+def planet_params
+	params.required(:planet).permit(:name, :diameter, :rings, :moons, :order, :explored, :image, :distance_from_sun, :atmosphere, :solid)
+end
+```
+
+- validate that when saving we pass through a name. app/models/planet.rb
+```
+class Planet < ActiveRecord::Base
+	validates :name, presence: true
+	validates :image, presence: true
+end
+```
 
 
 
