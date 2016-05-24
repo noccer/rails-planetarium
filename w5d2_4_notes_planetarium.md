@@ -17,18 +17,22 @@
 _This added `resources :planets` into our routes.rb file!
 it hasn't added anything into our PlanetsController file.**_
 
+**we have an option here to add in views!**
+`rails generate resource new create`
+http://stackoverflow.com/questions/5614083/ruby-on-rails-generating-views
+
 **Now we need to edit our migration:**
 - Go into db/migrate/20160524044755_create_planets.rb
-_t.string :name
-t.integer :diameter
-t.boolean :solid
-t.integer :order
-t.boolean :explored
-t.boolean :rings
-t.integer :moons, default: 1
-t.string :image
-t.string :atmosphere
-t.integer :distance_from_sun_
+	_t.string :name
+	t.integer :diameter
+	t.boolean :solid
+	t.integer :order
+	t.boolean :explored
+	t.boolean :rings
+	t.integer :moons, default: 1
+	t.string :image
+	t.string :atmosphere
+	t.integer :distance_from_sun_
 
 - `rake db:migrate`
 
