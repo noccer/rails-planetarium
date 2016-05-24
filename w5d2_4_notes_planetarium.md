@@ -64,8 +64,23 @@ end
 <%= link_to 'Create new Planet', new_planet_path %>
 ```
 
-
-
+- add form into new.html.erb
+```
+<%= form_for :planet, url: planets_path do |f| %>
+	Name: <%= f.text_field :name, class: 'name' %><br/>
+	Diameter: <%= f.number_field :diameter %><br/>
+	Solid: <%= f.check_box :solid %><br/>
+	Order: <%= f.number_field :order %><br/>
+	Explored: <%= f.check_box :explored %><br/>
+	Rings: <%= f.check_box :rings %><br/>
+	Moons: <%= f.number_field :moons %><br/>
+	Image: <%= f.text_field :image %><br/>
+	Atmosphere: <%= f.text_field :atmosphere %><br/>
+	Distance from Sun: <%= f.number_field :distance_from_sun %><br/>
+	<%= f.submit 'Create Planet', class: 'my-btn' %>
+<% end %>
+```
+Information here is going to post to /planets
 
 
 
