@@ -1,17 +1,19 @@
 class PlanetsController < ApplicationController
 	def index
 	end
+
 	def new
+		@planet = Planet.new
 	end
 
 	def create
 		@planet = Planet.create(planet_params) #create a new instance
-		if planet.valid?
+		if @planet.valid?
 			redirect_to planets_path
 		else
-			render json: planet.errors.messages
+			redirect_to new_planet_path
 		end
-		redirect_to planets_path
+
 	end
 
 	def planet_params
