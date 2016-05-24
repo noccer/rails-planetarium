@@ -10,9 +10,12 @@
 
 - edit Gemfile
 - delete out test and production lines in database.yml
-- rake db:create [rake db:drop would have destroyed the database]
+- `rake db:create` [rake db:drop would have destroyed the database]
 
-- rails generate resource planet <<<when we define this it's always singular
+we generally always want to do this:
+- `rails generate resource planet` when we define this it's always singular
+This added `resources :planets` into our routes.rb file!
+it hasn't added anything into our PlanetsController file.
 
-
-**************
+Now we need to edit our migration:
+Go into db/migrate/20160524044755_create_planets.rb
